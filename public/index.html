@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshMart - Fresh Groceries Delivered</title>
+    <meta name="description" content="Shop fresh fruits, vegetables, dairy, bakery products and snacks at FreshMart.">
+    <meta name="theme-color" content="#198754">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-icon">🥬</span>
+                Fresh<span>Mart</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <div class="header-actions">
+                <form class="search-box" id="searchForm" role="search">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search groceries..."
+                        aria-label="Search groceries"
+                    >
+                    <button type="submit" aria-label="Search">🔍</button>
+                </form>
+
+                <button class="cart-button" id="cartButton" type="button">
+                    🛒 Cart <span id="cartCount" class="cart-count">0</span>
+                </button>
+
+                <button class="menu-toggle" id="menuToggle"
+                    type="button" aria-label="Toggle navigation"
+                    aria-expanded="false">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="eyebrow">FRESHNESS YOU CAN TRUST</span>
+
+                    <h1>Fresh groceries.<br>
+                        <span>Happy living.</span>
+                    </h1>
+
+                    <p>
+                        Bring home farm-fresh fruits, crisp vegetables,
+                        everyday essentials and delicious treats.
+                    </p>
+
+                    <a href="#products" class="primary-button">
+                        Shop Now <span>→</span>
+                    </a>
+
+                    <div class="hero-benefits">
+                        <span>✓ Fresh quality</span>
+                        <span>✓ Great value</span>
+                        <span>✓ Easy shopping</span>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=85"
+                        alt="Fresh colorful vegetables at a grocery market"
+                    >
+                    <div class="fresh-badge">
+                        <span>🌿</span>
+                        <div>
+                            <strong>Fresh every day</strong>
+                            <small>Good food, good mood</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits -->
+        <section class="benefits">
+            <div class="container benefit-grid">
+                <article class="benefit-item">
+                    <span class="benefit-icon">🥦</span>
+                    <div>
+                        <h3>Fresh Products</h3>
+                        <p>Everyday essentials</p>
+                    </div>
+                </article>
+
+                <article class="benefit-item">
+                    <span class="benefit-icon">💰</span>
+                    <div>
+                        <h3>Great Prices</h3>
+                        <p>Value for your money</p>
+                    </div>
+                </article>
+
+                <article class="benefit-item">
+                    <span class="benefit-icon">🛍️</span>
+                    <div>
+                        <h3>Easy Shopping</h3>
+                        <p>Simple and convenient</p>
+                    </div>
+                </article>
+
+                <article class="benefit-item">
+                    <span class="benefit-icon">💚</span>
+                    <div>
+                        <h3>Quality First</h3>
+                        <p>Made for your family</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="section" id="categories">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">EXPLORE OUR STORE</span>
+                        <h2>Shop by category</h2>
+                        <p>Find your everyday favorites in one place.</p>
+                    </div>
+                </div>
+
+                <div class="category-grid">
+                    <button class="category-card" data-category="Fruits">
+                        <span class="category-emoji">🍎</span>
+                        <h3>Fresh Fruits</h3>
+                        <p>Juicy and delicious</p>
+                    </button>
+
+                    <button class="category-card" data-category="Vegetables">
+                        <span class="category-emoji">🥕</span>
+                        <h3>Vegetables</h3>
+                        <p>Fresh from the farm</p>
+                    </button>
+
+                    <button class="category-card" data-category="Dairy">
+                        <span class="category-emoji">🥛</span>
+                        <h3>Dairy Products</h3>
+                        <p>Daily goodness</p>
+                    </button>
+
+                    <button class="category-card" data-category="Bakery">
+                        <span class="category-emoji">🍞</span>
+                        <h3>Bakery</h3>
+                        <p>Soft and delicious</p>
+                    </button>
+
+                    <button class="category-card" data-category="Snacks">
+                        <span class="category-emoji">🍿</span>
+                        <h3>Snacks</h3>
+                        <p>Treat yourself</p>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products -->
+        <section class="section products-section" id="products">
+            <div class="container">
+                <div class="section-heading product-heading">
+                    <div>
+                        <span class="eyebrow">PICKED FOR YOU</span>
+                        <h2>Fresh picks today</h2>
+                        <p>Quality groceries for your everyday needs.</p>
+                    </div>
+
+                    <button class="text-button" id="showAllButton" type="button">
+                        View all products →
+                    </button>
+                </div>
+
+                <p id="resultsMessage" class="results-message" aria-live="polite"></p>
+
+                <div class="product-grid" id="productGrid">
+
+                    <article class="product-card"
+                        data-name="Red Apples"
+                        data-category="Fruits">
+                        <div class="product-image">
+                            <span class="product-tag">Popular</span>
+                            <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=600&q=80"
+                                alt="Fresh red apples" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Fruits</span>
+                            <h3>Fresh Red Apples</h3>
+                            <p class="product-description">Crisp, sweet and refreshing.</p>
+                            <div class="product-bottom">
+                                <span class="price">₹120 <small>/ kg</small></span>
+                                <button class="add-button" data-name="Fresh Red Apples"
+                                    data-price="120" type="button" aria-label="Add Fresh Red Apples to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card"
+                        data-name="Bananas"
+                        data-category="Fruits">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=600&q=80"
+                                alt="Fresh bananas" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Fruits</span>
+                            <h3>Fresh Bananas</h3>
+                            <p class="product-description">Naturally sweet and energy-rich.</p>
+                            <div class="product-bottom">
+                                <span class="price">₹60 <small>/ dozen</small></span>
+                                <button class="add-button" data-name="Fresh Bananas"
+                                    data-price="60" type="button" aria-label="Add Fresh Bananas to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card"
+                        data-name="Fresh Carrots"
+                        data-category="Vegetables">
+                        <div class="product-image">
+                            <span class="product-tag green-tag">Fresh</span>
+                            <img src="https://images.unsplash.com/photo-1445282768818-728615cc910a?auto=format&fit=crop&w=600&q=80"
+                                alt="Fresh carrots and vegetables" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Vegetables</span>
+                            <h3>Fresh Carrots</h3>
+                            <p class="product-description">Crunchy and full of goodness.</p>
+                            <div class="product-bottom">
+                                <span class="price">₹50 <small>/ kg</small></span>
+                                <button class="add-button" data-name="Fresh Carrots"
+                                    data-price="50" type="button" aria-label="Add Fresh Carrots to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card"
+                        data-name="Fresh Broccoli"
+                        data-category="Vegetables">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=600&q=80"
+                                alt="Fresh green broccoli" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Vegetables</span>
+                            <h3>Fresh Broccoli</h3>
+                            <p class="product-description">A healthy green favorite.</p>
+                            <div class="product-bottom">
+                                <span class="price">₹90 <small>/ piece</small></span>
+                                <button class="add-button" data-name="Fresh Broccoli"
+                                    data-price="90" type="button" aria-label="Add Fresh Broccoli to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card"
+                        data-name="Fresh Milk"
+                        data-category="Dairy">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80"
+                                alt="Glass of fresh milk" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Dairy</span>
+                            <h3>Fresh Milk</h3>
+                            <p class="product-description">A classic daily essential.</p>
+                            <div class="product-bottom">
+                                <span class="price">₹32 <small>/ 500 ml</small></span>
+                                <button class="add-button" data-name="Fresh Milk"
+                                    data-price="32" type="button" aria-label="Add Fresh Milk to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card"
+                        data-name="Cheese"
+                        data-category="Dairy">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=600&q=80"
+                                alt="Cheese selection" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Dairy</span>
+                            <h3>Cheese</h3>
+                            <p class="product-description">Creamy and delicious.</p>
+                            <div class="product-bottom">
+                                <span class="price">₹150 <small>/ pack</small></span>
+                                <button class="add-button" data-name="Cheese"
+                                    data-price="150" type="button" aria-label="Add Cheese to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card"
+                        data-name="Fresh Bread"
+                        data-category="Bakery">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80"
+                                alt="Freshly baked bread" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Bakery</span>
+                            <h3>Fresh Bread</h3>
+                            <p class="product-description">Soft, warm and satisfying.</p>
+                            <div class="product-bottom">
+                                <span class="price">₹45 <small>/ loaf</small></span>
+                                <button class="add-button" data-name="Fresh Bread"
+                                    data-price="45" type="button" aria-label="Add Fresh Bread to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card"
+                        data-name="Potato Chips"
+                        data-category="Snacks">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=600&q=80"
+                                alt="Crispy potato chips" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Snacks</span>
+                            <h3>Potato Chips</h3>
+                            <p class="product-description">A crunchy snack for any time.</p>
+                            <div class="product-bottom">
+                                <span class="price">₹30 <small>/ pack</small></span>
+                                <button class="add-button" data-name="Potato Chips"
+                                    data-price="30" type="button" aria-label="Add Potato Chips to cart">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div id="noResults" class="no-results" hidden>
+                    <span>🔎</span>
+                    <h3>No products found</h3>
+                    <p>Try another search or choose a different category.</p>
+                    <button class="primary-button" id="resetSearchButton" type="button">
+                        Show all products
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about-section" id="about">
+            <div class="container about-content">
+                <div class="about-icon">🌱</div>
+                <div>
+                    <span class="eyebrow">A LITTLE MORE FRESHNESS</span>
+                    <h2>Good food makes a difference.</h2>
+                    <p>
+                        FreshMart makes it easy to explore everyday grocery
+                        essentials in one friendly place. Shop simply,
+                        choose your favorites and enjoy fresh living.
+                    </p>
+                </div>
+                <a href="#products" class="secondary-button">Explore groceries →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <a href="#home" class="logo footer-logo">
+                🥬 Fresh<span>Mart</span>
+            </a>
+            <p>Fresh choices for happier days.</p>
+            <p class="copyright">© <span id="currentYear"></span> FreshMart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal-overlay" id="cartModal" hidden>
+        <section class="cart-modal" role="dialog"
+            aria-modal="true" aria-labelledby="cartTitle">
+            <div class="modal-header">
+                <div>
+                    <span class="eyebrow">YOUR SHOPPING LIST</span>
+                    <h2 id="cartTitle">Your Cart</h2>
+                </div>
+                <button class="close-button" id="closeCartButton"
+                    type="button" aria-label="Close cart">×</button>
+            </div>
+
+            <div id="cartItems" class="cart-items"></div>
+
+            <div class="cart-empty" id="cartEmpty">
+                <span>🛒</span>
+                <h3>Your cart is empty</h3>
+                <p>Add your favorite groceries to get started.</p>
+            </div>
+
+            <div class="cart-total-row">
+                <span>Total</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button class="primary-button checkout-button"
+                id="checkoutButton" type="button">
+                Continue shopping
+            </button>
+
+            <p class="cart-note">
+                Demo website: checkout and online payment are not connected.
+            </p>
+        </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+        // Mobile navigation
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("nav-open");
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("nav-open");
+                menuToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+
+        // Product search and category filtering
+        const searchForm = document.getElementById("searchForm");
+        const searchInput = document.getElementById("searchInput");
+        const productCards = Array.from(
+            document.querySelectorAll(".product-card")
+        );
+        const categoryButtons = document.querySelectorAll(".category-card");
+        const noResults = document.getElementById("noResults");
+        const resultsMessage = document.getElementById("resultsMessage");
+        const showAllButton = document.getElementById("showAllButton");
+        const resetSearchButton = document.getElementById("resetSearchButton");
+
+        let selectedCategory = "All";
+
+        function filterProducts() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            productCards.forEach(function (card) {
+                const name = card.dataset.name.toLowerCase();
+                const category = card.dataset.category;
+                const text = card.textContent.toLowerCase();
+
+                const matchesSearch =
+                    name.includes(searchTerm) || text.includes(searchTerm);
+
+                const matchesCategory =
+                    selectedCategory === "All" ||
+                    category === selectedCategory;
+
+                const isVisible = matchesSearch && matchesCategory;
+
+                card.hidden = !isVisible;
+
+                if (isVisible) {
+                    visibleCount++;
+                }
+            });
+
+            noResults.hidden = visibleCount !== 0;
+
+            if (searchTerm || selectedCategory !== "All") {
+                resultsMessage.textContent =
+                    visibleCount + (visibleCount === 1
+                        ? " product found"
+                        : " products found");
+            } else {
+                resultsMessage.textContent = "";
+            }
+        }
+
+        searchForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            filterProducts();
+            document.getElementById("products").scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+
+        searchInput.addEventListener("input", filterProducts);
+
+        categoryButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                selectedCategory = button.dataset.category;
+                searchInput.value = "";
+                filterProducts();
+
+                document.getElementById("products").scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+
+        function resetFilters() {
+            selectedCategory = "All";
+            searchInput.value = "";
+            filterProducts();
+        }
+
+        showAllButton.addEventListener("click", resetFilters);
+        resetSearchButton.addEventListener("click", resetFilters);
+
+        // Shopping cart
+        const cart = new Map();
+        const cartCount = document.getElementById("cartCount");
+        const cartButton = document.getElementById("cartButton");
+        const cartModal = document.getElementById("cartModal");
+        const closeCartButton = document.getElementById("closeCartButton");
+        const cartItems = document.getElementById("cartItems");
+        const cartEmpty = document.getElementById("cartEmpty");
+        const cartTotal = document.getElementById("cartTotal");
+        const checkoutButton = document.getElementById("checkoutButton");
+        const toast = document.getElementById("toast");
+
+        let toastTimer;
+
+        function formatPrice(price) {
+            return "₹" + price.toLocaleString("en-IN");
+        }
+
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add("toast-visible");
+
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(function () {
+                toast.classList.remove("toast-visible");
+            }, 2200);
+        }
+
+        function updateCart() {
+            let totalItems = 0;
+            let totalPrice = 0;
+
+            cart.forEach(function (item) {
+                totalItems += item.quantity;
+                totalPrice += item.price * item.quantity;
+            });
+
+            cartCount.textContent = totalItems;
+            cartTotal.textContent = formatPrice(totalPrice);
+
+            cartItems.innerHTML = "";
+
+            cart.forEach(function (item, name) {
+                const row = document.createElement("div");
+                row.className = "cart-item";
+
+                const details = document.createElement("div");
+                details.className = "cart-item-details";
+
+                const title = document.createElement("h3");
+                title.textContent = name;
+
+                const price = document.createElement("p");
+                price.textContent =
+                    formatPrice(item.price) + " each";
+
+                details.append(title, price);
+
+                const controls = document.createElement("div");
+                controls.className = "quantity-controls";
+
+                const minusButton = document.createElement("button");
+                minusButton.type = "button";
+                minusButton.textContent = "−";
+                minusButton.setAttribute("aria-label", "Remove one " + name);
+                minusButton.addEventListener("click", function () {
+                    changeQuantity(name, -1);
+                });
+
+                const quantity = document.createElement("span");
+                quantity.textContent = item.quantity;
+
+                const plusButton = document.createElement("button");
+                plusButton.type = "button";
+                plusButton.textContent = "+";
+                plusButton.setAttribute("aria-label", "Add one " + name);
+                plusButton.addEventListener("click", function () {
+                    changeQuantity(name, 1);
+                });
+
+                controls.append(minusButton, quantity, plusButton);
+                row.append(details, controls);
+                cartItems.appendChild(row);
+            });
+
+            cartEmpty.hidden = cart.size !== 0;
+            cartItems.hidden = cart.size === 0;
+        }
+
+        function changeQuantity(name, amount) {
+            const item = cart.get(name);
+
+            if (!item) {
+                return;
+            }
+
+            item.quantity += amount;
+
+            if (item.quantity <= 0) {
+                cart.delete(name);
+            }
+
+            updateCart();
+        }
+
+        document.querySelectorAll(".add-button").forEach(function (button) {
+            button.addEventListener("click", function () {
+                const name = button.dataset.name;
+                const price = Number(button.dataset.price);
+
+                if (!name || !Number.isFinite(price) || price < 0) {
+                    showToast("Unable to add this product.");
+                    return;
+                }
+
+                if (cart.has(name)) {
+                    cart.get(name).quantity++;
+                } else {
+                    cart.set(name, {
+                        price: price,
+                        quantity: 1
+                    });
+                }
+
+                updateCart();
+                showToast(name + " added to cart!");
+            });
+        });
+
+        function openCart() {
+            cartModal.hidden = false;
+            document.body.classList.add("modal-open");
+            closeCartButton.focus();
+        }
+
+        function closeCart() {
+            cartModal.hidden = true;
+            document.body.classList.remove("modal-open");
+            cartButton.focus();
+        }
+
+        cartButton.addEventListener("click", openCart);
+        closeCartButton.addEventListener("click", closeCart);
+
+        cartModal.addEventListener("click", function (event) {
+            if (event.target === cartModal) {
+                closeCart();
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && !cartModal.hidden) {
+                closeCart();
+            }
+        });
+
+        checkoutButton.addEventListener("click", function () {
+            closeCart();
+
+            if (cart.size === 0) {
+                showToast("Your cart is empty.");
+                return;
+            }
+
+            document.getElementById("products").scrollIntoView({
+                behavior: "smooth"
+            });
+
+            showToast("Demo only: online checkout is not available.");
+        });
+
+        // Footer year
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+        // Initial cart rendering
+        updateCart();
+    </script>
+
+</body>
+</html>
